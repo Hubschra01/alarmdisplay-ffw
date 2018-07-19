@@ -32,7 +32,12 @@ Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 require "config.inc.php";
 
 // Verbindung zur Datenbank herstellen und an Handle $db übergeben
-$db = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME) or die ('Verbindung zur Datenbank fehlgeschlagen.');
+$db = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+if (!$db){
+	echo "<h1>Connection lost will refresh in 10 sec</h1>";
+    header("Refresh: 10");
+    exit();
+}
 $db->set_charset("utf8");
 
 // Abfrage der im Skript benötigten Konfigurationseinstellungen aus der Datenbank.
@@ -234,5 +239,14 @@ $db->close();
 
 //Ende HTML-Body --> ausserhalb PHP
 ?>
+<script type="text/JavaScript">
+function countdown(remaining) {
+    if(remaining <= 0)
+        location.reload(true);
+    document.getElementById('countdown').innerHTML = remaining;
+    setTimeout(function(){ countdown(remaining - 1); }, 1000);
+}(5); // 5 seconds
+</script>
+
 </body>
 </html>
