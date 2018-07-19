@@ -33,11 +33,12 @@ require "config.inc.php";
 
 // Verbindung zur Datenbank herstellen und an Handle $db übergeben
 $db = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+//Autoreload 10sec
 if (!$db){
 	echo "<h1>Connection lost will refresh in 10 sec</h1>";
-    header("Refresh: 10");
-    exit();
-}
+    	header("Refresh: 10");
+   	exit();
+	}
 $db->set_charset("utf8");
 
 // Abfrage der im Skript benötigten Konfigurationseinstellungen aus der Datenbank.
