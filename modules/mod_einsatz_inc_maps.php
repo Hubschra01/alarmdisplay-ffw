@@ -22,10 +22,6 @@ Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 */
 // ---->>>> Ich gehe davon aus, dass eine übermäßige Nutzung durch eine Ortsfeuerwehr mit vielleicht einem Abruf pro Tag, nicht gegeben ist. <<<<------
 
-// --->> Änderung in der mod_einsatz.php <<<<------
-// Google maps Eintrag ersetzen
-// echo "<iframe class='span-10' src='modules/mod_openfire.php?strasse=" . urlencode($row[3]) . "&hausnr=" . $row[4] . "&ort=" . $row[5] . "'  height='900' name='Einsatzort' style='border:1px solid #777;'>Einsatzort</iframe>";
-//
 // Die Abfrage erfolgt direkt über den Nomination-Dienst in wie weit das von den Nutzungsregelen geht ist noch nicht
 // bis zum Ende geklärt. 
 // User-Agent Tag sollte geändert werden damit nicht alle Abfragen über einen Tag läufen. 
